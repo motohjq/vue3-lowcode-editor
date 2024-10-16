@@ -1,21 +1,21 @@
-const { defineConfig } = require('@vue/cli-service')
-const { name } = require('./package.json')
+const { defineConfig } = require('@vue/cli-service');
+const { name } = require('./package.json');
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: '/vue/',
+  // publicPath: '/vue/',
   productionSourceMap: false,
   configureWebpack: {
     output: {
       library: `${name}-[name]`,
-      libraryTarget: "umd",
+      libraryTarget: 'umd',
       // jsonpFunction: `webpackJsonp_${name}`,
-    }
+    },
   },
   devServer: {
     hot: true,
     port: 3013,
     headers: {
-      "Access-Control-Allow-Origin": "*"
-    }
-  }
-})
+      'Access-Control-Allow-Origin': '*',
+    },
+  },
+});
